@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <p class="noticetext" id="noticetext">Sample Chat</p>
+    </div>
+    <style>
+        .noticetext{
+            text-align: center;
+            font-size: x-large;
+        }
+    </style>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket=io();
+    socket.on("board",(msg)=>{
+        document.getElementById("noticetext").innerHTML=msg;
+    })
+</script>
+</body>
+</html>
